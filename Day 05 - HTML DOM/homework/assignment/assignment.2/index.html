@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Caculator</p>
+
+    <input type="number" id="num1" name="numberInput.1" onchange="getNum1(this)" placeholder="enter your first number"
+        size=50>
+    <input type="number" id="num1" name="numberInput.2" onchange="getNum2(this)" placeholder="enter your second number"
+        size=50>
+    <table>
+        <br>
+        <br>
+        <button onclick="add()" id="1">+</button>
+        <button onclick="sub()" id="2">-</button>
+        <button onclick="multi()" id="3">*</button>
+        <button onclick="div()" id="4">/</button>
+    </table>
+    <br><br><br>
+    <p id="result"></p>
+    <script>
+        let result = document.getElementById("result")
+        let Num1;
+        let Num2;
+        function getNum1(obj) { Num1 = Number(obj.value) }
+        function getNum2(obj) { Num2 = Number(obj.value) }
+        function add() {
+            result.innerText = "Kết quả: " + (Num1 + Num2);
+        }
+        function sub() {
+            result.innerText = "Kết quả: " + (Num1 - Num2);
+        }
+        function multi() {
+            result.innerText = "Kết quả: " + (Num1 * Num2);
+        }
+        function div() {
+            result.innerText = "Kết quả: " + (Num1 / Num2);
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

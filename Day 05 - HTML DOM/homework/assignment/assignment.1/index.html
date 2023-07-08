@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h4>Nhập số</h4>
+
+	<input type="number" id="numberInput" name="numberInput" onchange="getValue(this)"
+		placeholder="Please enter an interger" size=40>
+	<button id="checkBtn">Kiểm tra</button>
+	<p id="result"></p>
+	<script>
+		let checkBtn = document.getElementById("checkBtn")
+		//Cách 1 lấy giá trị = cách gán giá trị 
+		let result = document.getElementById("result")
+		let number;
+        function getValue(obj) {
+            number = obj.value;
+        }
+		
+		//Cách 2 dò giá trị = id hoặc tên
+		//let numberInput = document.getElementById("numberInput")
+		//numberInput.addEventListener("change", function () {
+		//	number = numberInput.value})
+		checkBtn.addEventListener("click", function () {
+			if (number % 2 == 0) {
+				result.innerText = number + " là số chẵn";
+			} else {
+				result.innerText = number + " là số lẻ";
+			}
+
+
+
+
+		})
+	</script>
+</body>
+
+</html>
