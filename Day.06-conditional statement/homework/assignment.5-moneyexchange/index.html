@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table cellpadding="10" cellspacing="10">
+        <tr>
+            <th>Amount</th>
+            <th>Form Currency </th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="money" name="money" size=40></td>
+            <td><select name="" onchange="getArea(this)">
+                    <option value="VN">VN</option>
+                    <option value="US">US</option>
+
+                </select></td>
+            <td><select name="" onchange="getSecondArea(this)">
+                    <option value="VNĐ">VNĐ</option>
+                    <option value="USD">USD</option>
+
+                </select></td>
+            <td><button id="checkBtn" onclick="btnHandler()">Covert</button></td>
+        </tr>
+    </table>
+    <p id="result"></p>
+
+    <script>
+        let result = document.getElementById("result")
+        let area; let secondArea
+        let money = document.getElementById("money")
+        money.addEventListener("change", function () { moneyBase = this.value })
+        function getArea(obj) {
+            area = obj.value
+            switch (area) {
+                case "VN": x = 1; break;
+                case "US": x = 23000; break;
+            }
+        }
+        function getSecondArea(obj) {
+            secondArea = obj.value
+
+
+            switch (secondArea) {
+                case "VNĐ": y = 1; break;
+                case "USD": y = 23000; break;
+            }
+        }
+        function btnHandler() { result.innerText = Number(moneyBase) * x / y }
+
+
+    </script>
+</body>
+
+</html>

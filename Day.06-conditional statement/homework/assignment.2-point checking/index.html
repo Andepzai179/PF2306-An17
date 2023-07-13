@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <b>
+        <p>Môn toán <input type="number" id="Math" name="Math" size=40></p>
+        <p>Môn văn <input type="number" id="Literature" name="Literature" size=40></p>
+        <p>Môn anh <input type="number" id="English" name="English" size=40></p>
+        <p>Khu vực
+            <select name="" onchange="getArea(this)">
+                <option value="KV1">KV1</option>
+                <option value="KV2">KV2</option>
+                <option value="KV2-NT">KV2 - NT</option>
+                <option value="KV3">KV3</option>
+            </select>
+        </p>
+    </b> <br><br>
+
+    <button id="checkBtn" onclick="btnHandler()">Tính điểm</button>
+    <p id="result"></p>
+    <script>
+        let math = document.getElementById("Math")
+        let english = document.getElementById("English")
+        let literature = document.getElementById("Literature")
+        let result = document.getElementById("result")
+        math.addEventListener("change", function () { mathScore = this.value })
+        english.addEventListener("change", function () { englishScore = this.value })
+        literature.addEventListener("change", function () { literatureScore = this.value })
+        function getArea(obj) {
+            let area = obj.value;
+            switch (area) {
+                case "KV1":
+                    x = 0.75;
+                    break;
+                case "KV2":
+                    x = 0.5;
+                    break;
+                case "KV2-NT":
+                    x = 0.25;
+                    break;
+                default:
+                    x = 0;
+                    break;
+            }
+        }
+
+        function btnHandler() { result.innerText = Number(x) + Number(mathScore) + Number(englishScore) + Number(literatureScore) }
+
+
+
+    </script>
+</body>
+
+</html>
