@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="number" onchange="getFibonachiAmount(this)" placeholder="nhập số lượng số của dãy">
+  <button id="checkBtn" onclick="btnHandler()">Submit</button>
+  <button id="checkBtn" onclick="btnHandler1()">Sum 20 first number</button>
+  <p id="result"></p>
+  <script>
+    let result = document.getElementById("result")
+    let number; let number1 ; let number2
+    function getFibonachiAmount(obj) {
+      number = parseInt(obj.value)
+    }
+    function btnHandler(){
+      number1 = number2 = 1;
+             if (number == 1) {
+                 document.write("1"+"<br>");
+             }
+             if (number == 2) {
+              document.write("1"+"<br>");
+              document.write("1"+"<br>");
+             }
+             if (number > 2) {
+              document.write("1"+"<br>");
+              document.write("1"+"<br>");
+                 for (let i = 2; i < number; i++) {
+                     number3 = number1 + number2;
+                     document.write(number3+"<br>");
+                     number1=number2;
+                     number2=number3;
+                 }
+             }
+
+  } 
+  
+  function btnHandler1(){
+    sum = sum + number1 
+  }
+
+       // function btnHandler(){
+        //    for (let i = 1; i <= number; i++) {
+          //      console.log(fibonacci(i));
+            //}
+        //}
+        //function fibonacci(n) {
+          //  if (n == 1) {
+            //    return 1;
+            //} else if (n == 2) {
+              //  return 1;
+            //} else {
+             //   return fibonacci(n - 1) + fibonacci(n - 2);
+            //}
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

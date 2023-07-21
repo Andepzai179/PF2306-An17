@@ -17,11 +17,13 @@
         </tr>
         <tr>
             <td><input type="number" id="money" name="money" size=40></td>
-            <td><select name="" onchange="getArea(this)">
+            <td>
+                <select name="" onchange="getArea(this)">
+                    <option value="">select</option>
                     <option value="VN">VN</option>
                     <option value="US">US</option>
-
-                </select></td>
+                </select>
+            </td>
             <td><select name="" onchange="getSecondArea(this)">
                     <option value="VNĐ">VNĐ</option>
                     <option value="USD">USD</option>
@@ -33,11 +35,14 @@
     <p id="result"></p>
 
     <script>
+        let btn = document.getElementById("checkBtn")
+        btn.style.backgroundColor = ("blue")
         let result = document.getElementById("result")
         let area; let secondArea
         let money = document.getElementById("money")
         money.addEventListener("change", function () { moneyBase = this.value })
-        function getArea(obj) {
+        function getArea(obj) { 
+            console.log(obj)
             area = obj.value
             switch (area) {
                 case "VN": x = 1; break;
@@ -46,14 +51,12 @@
         }
         function getSecondArea(obj) {
             secondArea = obj.value
-
-
             switch (secondArea) {
                 case "VNĐ": y = 1; break;
                 case "USD": y = 23000; break;
             }
         }
-        function btnHandler() { result.innerText = Number(moneyBase) * x / y }
+        function btnHandler() { result.innerText = Number(moneyBase) * (x / y) }
 
 
     </script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nhập vào 1 số</h1>
+    <input type="number" onchange="getNumber(this)" placeholder="nhập vào số muốn đảo ngược" size="40"><br><br>
+  <button id="checkBtn" onclick="btnHandler1()" size="10">Submit</button>
+  <button id="checkBtn" onclick="btnHandler2()" size="10">Cancel</button>
+  <p id="result"></p>
+  <script>
+    let result = document.getElementById("result")
+    let number;let n 
+    function getNumber(obj) {
+      number = parseInt(obj.value)
+    }
+    function btnHandler1(){
+        let x = number
+        let n = 0;
+        console.log(x)
+        while (x!=0){
+         n = n * 10 + ( x % 10)
+         x = (x-x%10)/10}
+        result.innerText=("Số đảo ngược là: " + n)
+
+
+
+    }
+
+
+
+
+    
+  </script>
+</body>
+</html>
