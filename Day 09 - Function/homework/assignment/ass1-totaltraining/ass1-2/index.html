@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        var stars = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        function find(starName) {
+            for (var i = 0; i < star.length; i++) {
+                if (star[i] === starName) {
+                    return stars[i];
+                }
+            }
+            return "Không tìm thấy chòm sao cho ngôi sao này.";
+        }
+
+        let name = prompt("Nhập tên ngôi sao:");
+        let result = find(name);
+        console.log(result);
+    </script>
+</body>
+
+</html>

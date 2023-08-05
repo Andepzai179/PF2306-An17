@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let numbers = []
+        let number1 = parseInt(prompt("nhập số thứ nhất"))
+        let number2 = parseInt(prompt("nhập số thứ hai"))
+        let number3 = parseInt(prompt("nhập số thứ ba"))
+        let number4 = parseInt(prompt("nhập số thứ tư"))
+        let number5 = parseInt(prompt("nhập số thứ năm"))
+        numbers.push(number1, number2, number3, number4, number5)
+        reverse(numbers)
+        // console.log(numbers)
+        function reverse(num) {
+            let reversedNum = []
+            for (let i = num.length-1; i >= 0; i--) {
+                reversedNum.push(num[i])
+            }
+            return console.log(reversedNum)
+        }
+        
+        
+
+    </script>
+</body>
+
+</html>

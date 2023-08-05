@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <b>Sample Screen:</b><br><br>
+        <input type="number" onchange="getNumber(this)" placeholder="" size="40"><br><br>
+        <button id="checkBtn" onclick="btnHandlerA()">Add</button>
+        <button id="checkBtn1" onclick="btnHandlerB()">Display</button>
+        <p id="output"></p><br />
+    <script>
+        let inputArray = [];
+        let tempValue;
+        let output = document.getElementById("output");
+        function getNumber(obj) {
+            tempValue = Number(obj.value);}
+            function btnHandlerA() {
+            inputArray.push(tempValue);}
+            function btnHandlerB() {
+            let text = "";
+            for (let i = 0; i < inputArray.length; i++) {
+                text += "Element " + i + " = " + inputArray[i] + "<br>"
+            }
+            output.innerHTML = text;
+        }     
+
+
+    </script>
+</body>
+</html>

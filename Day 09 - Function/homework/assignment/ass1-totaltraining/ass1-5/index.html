@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = parseInt(prompt("Nhập một số nguyên dương:"));
+        function caculate(factorial) {
+            let x = 1;
+            if (n < 0 ) {
+                return "Vui lòng nhập một số nguyên dương.";
+            }
+            for (let i = 1; i <= n; i++) {
+                x *= i;
+            }
+            return x;
+        }
+        console.log(caculate(n));
+    </script>
+</body>
+
+</html>
